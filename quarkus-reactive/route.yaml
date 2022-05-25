@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: quarkus-reactive
+spec:
+  to:
+    kind: Service
+    name: quarkus-reactive
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  wildcardPolicy: None
