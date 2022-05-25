@@ -9,9 +9,7 @@ metadata:
     deployment.kubernetes.io/revision: '1'
   resourceVersion: '36768263'
   name: quarkus-reactive
-  uid: 6220f9db-fbdd-47dc-bf67-7d1ba6f68211
-  creationTimestamp: '2022-05-25T13:19:20Z'
-  generation: 2
+  generation: 1
   labels:
     app: quarkus-reactive
     app.kubernetes.io/component: quarkus-reactive
