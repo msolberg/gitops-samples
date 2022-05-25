@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: quarkus-reactive
+  namespace: pipelines
+  labels:
+    app: quarkus-reactive
+    app.kubernetes.io/component: quarkus-reactive
+    app.kubernetes.io/instance: quarkus-reactive
+    app.kubernetes.io/name: quarkus-reactive
+    app.openshift.io/runtime: java
+    app.openshift.io/runtime-version: openjdk-17-ubi8
+  annotations:
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/ultraJeff/quarkus-reactive'
+    openshift.io/generated-by: OpenShiftWebConsole
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: 8443-tcp
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: quarkus-reactive
+    deploymentconfig: quarkus-reactive
